@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials Science Chatbot</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Material Science Chatbot</h1>
+    </header>
+    <main>
+        <form method="POST" id="chatbot-form">
+            <label for="input_text">Ask any questions with a material ID (e.g., what is mp-45):</label>
+            <input type="text" id="input_text" name="input_text" placeholder="Type your query here..." required>
+            <div class="container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        
+        <div id="loader">Loading... Please wait while we fetch your response!</div>
+        
+
+        <h2>Response:</h2>
+        {% if output %}
+            {% if output.Error %}
+                <p class="error">{{ output.Error }}</p>
+            {% else %}
+                {% if output.Chatbot_Response %}
+                    <p>{{ output.Chatbot_Response }}</p>
+                {% else %}
+                    <table>
+                        <tr>
+                            <th>Response</th>
+                            <th>Answer</th>
+                        </tr>
+                        {% for key, value in output.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <p>No response yet. Submit a query above.</p>
+        {% endif %}
+    </main>
+
+    <script>
+        const form = document.getElementById('chatbot-form');
+        const loader = document.getElementById('loader');
+
+        // Show loader on form submit
+        form.addEventListener('submit', function () {
+            loader.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
