@@ -3,73 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Biplab Dahal</title>
+  <title>Biplab Dahal - Personal Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 70px;
+    }
+    .hero {
+      background-color: #f8f9fa;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+    .blog-post {
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Homepage -->
-  <section id="home">
-    <h1>Welcome to My Website</h1>
-    <p>Hello, I'm Biplab Dahal, a Master's student in Computer Science and a software engineer specializing in .NET programming.</p>
-    <p>This site showcases my journey, projects, and reflections as I grow in the tech world!</p>
-  </section>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Biplab Dahal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <hr>
+<!-- Homepage Hero -->
+<section id="home" class="hero">
+  <div class="container">
+    <h1 class="display-4">Welcome to My Website</h1>
+    <p class="lead">I am Biplab Dahal - A passionate Software Engineer and Computer Science graduate student.</p>
+  </div>
+</section>
 
-  <!-- About Me -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am currently pursuing my Master's Degree in Computer Science at the University of South Dakota. I have over 2 years of experience working as a Software Engineer at Cedar Gate Services, focusing on .NET technologies. I am passionate about software development, machine learning, and data science.</p>
-    <p>Interests: Software Development, Machine Learning, Web Technologies, Problem Solving</p>
-  </section>
+<!-- About Me -->
+<section id="about" class="container my-5">
+  <h2>About Me</h2>
+  <div class="row align-items-center">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+      <p>I am currently pursuing my Master's Degree in Computer Science at the University of South Dakota. I have over 2 years of professional experience working at Cedar Gate Services specializing in .NET development. I love exploring technologies like Data Science, Machine Learning, and Web Development.</p>
+      <p><strong>Interests:</strong> Software Engineering, AI, Web Development, Problem Solving</p>
+    </div>
+  </div>
+</section>
 
-  <hr>
+<!-- Portfolio -->
+<section id="portfolio" class="container my-5">
+  <h2>Portfolio / Projects</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Road Accident Severity Prediction</h5>
+          <p class="card-text">A machine learning project predicting accident severity using neural networks and data science techniques.</p>
+          <p><strong>Tools:</strong> Python, HTML/CSS, Git/GitHub</p>
 
-  <!-- Portfolio / Projects -->
-  <section id="portfolio">
-    <h2>Portfolio / Projects</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-3 mt-md-0">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Agora - Recommendation System</h5>
+          <p class="card-text">A Django-based web application recommending products using collaborative filtering techniques.</p>
+          <p><strong>Tools:</strong> Python, Django, Git/GitHub</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3>Road Accident Severity Prediction</h3>
-    <p><strong>Tools Used:</strong> Python, HTML/CSS, Data Science, Git/GitHub</p>
-    <p>This project utilizes neural networks to predict accident severity and perform comprehensive analysis of road safety data.</p>
-    <p><a href="https://github.com/biplab1541">View on GitHub</a></p>
+<!-- Blog / Reflection -->
+<section id="blog" class="container my-5">
+  <h2>Blog / Reflections</h2>
+  <div class="blog-post">
+    <h4>Learning .NET and Beyond</h4>
+    <p>Working with Visual Basic and C# has strengthened my skills in scalable enterprise software development. Clean code and version control became essential parts of my workflow.</p>
+  </div>
+  <div class="blog-post">
+    <h4>Exploring Machine Learning Concepts</h4>
+    <p>Through hands-on projects, I've explored machine learning models, data analysis techniques, and the importance of understanding algorithms for building real-world solutions.</p>
+  </div>
+</section>
 
-    <h3>Agora</h3>
-    <p><strong>Tools Used:</strong> Python, HTML/CSS, Django, Git/GitHub</p>
-    <p>A recommendation system using Collaborative Filtering to personalize content suggestions, similar to Netflix or Amazon.</p>
-    <p><a href="https://github.com/biplab1541">View on GitHub</a></p>
-  </section>
+<!-- Resume / CV -->
+<section id="resume" class="container my-5">
+  <h2>Resume / CV</h2>
+  <p>Click below to view or download my resume:</p>
+  <a href="Biplab_Resume.pdf" class="btn btn-success" download>Download Resume</a>
+</section>
 
-  <hr>
+<!-- Contact Page -->
+<section id="contact" class="container my-5">
+  <h2>Contact Me</h2>
+  <p>If you'd like to get in touch, feel free to reach out via the links below:</p>
+  <ul class="list-unstyled">
+    <li><strong>Email:</strong> <a href="mailto:biplab.dahal@coyotes.usd.edu">biplab.dahal@coyotes.usd.edu</a></li>
+    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/biplab-dahal-683055207/" target="_blank">Biplab Dahal</a></li>
+    <li><strong>GitHub:</strong> <a href="https://github.com/biplab1541" target="_blank">biplab1541</a></li>
+  </ul>
+</section>
 
-  <!-- Blog / Reflections -->
-  <section id="blog">
-    <h2>Blog / Reflections</h2>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Biplab Dahal. All Rights Reserved.</p>
+</footer>
 
-    <h3>Learning .NET and Beyond</h3>
-    <p>Working with Visual Basic and C# at Cedar Gate Services has strengthened my skills in enterprise software development. I learned the importance of writing clean, maintainable code and working in large codebases.</p>
-
-    <h3>Exploring Machine Learning</h3>
-    <p>My road accident severity project helped me dive into machine learning concepts, training models using backpropagation, and understanding real-world applications of predictive analytics.</p>
-  </section>
-
-  <hr>
-
-  <!-- Resume -->
-  <section id="resume">
-    <h2>Resume / CV</h2>
-    <p><a href="Biplab_Resume.pdf" download>Download my Resume (PDF)</a></p>
-  </section>
-
-  <hr>
-
-  <!-- Contact Page -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:biplab.dahal@coyotes.usd.edu">biplab.dahal@coyotes.usd.edu</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/biplab-dahal-683055207/">Biplab Dahal</a></p>
-    <p>GitHub: <a href="https://github.com/biplab1541">biplab1541</a></p>
-  </section>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
