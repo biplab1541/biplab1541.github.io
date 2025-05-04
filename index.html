@@ -15,11 +15,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-   body {
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-  background-color: #eaeaea;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #eaeaea;
+    }
     .navbar {
       background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     }
@@ -28,17 +28,12 @@
       color: white;
       padding: 120px 20px;
       text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
     .hero h1 {
       font-weight: 800;
       font-size: 3.5rem;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    }
-    .hero p {
-      font-size: 1.25rem;
-    }
-    section {
-      padding: 80px 0;
     }
     h2 {
       font-size: 2.8rem;
@@ -48,19 +43,9 @@
       color: #0d6efd;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     }
-    footer {
-      background-color: #212529;
-      color: #fff;
-      padding: 30px 0;
-      text-align: center;
-    }
-    .card {
-      border: none;
-    }
     .card:hover {
-      transform: scale(1.03);
-      transition: 0.4s;
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
     }
     .btn-primary {
       background: #0072ff;
@@ -69,24 +54,29 @@
     .btn-primary:hover {
       background: #0056c1;
     }
-    .btn-success {
-      background: #28a745;
-      border: none;
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
     }
-    .btn-success:hover {
-      background: #218838;
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .bg-light-alt {
-      background: linear-gradient(135deg, #f0f4ff, #e2efff);
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    .shadow-text {
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    footer {
+      background-color: #212529;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
     }
   </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bold fs-4" href="#home">Biplab Dahal</a>
@@ -105,16 +95,14 @@
   </div>
 </nav>
 
-<!-- Hero -->
 <section id="home" class="hero">
   <div class="container">
-    <h1 class="mb-3">I am Biplab Dahal</h1>
+    <h1>I am Biplab Dahal</h1>
     <p class="lead">Software Engineer | Data Enthusiast | Lifelong Learner</p>
   </div>
 </section>
 
-<!-- About -->
-<section id="about">
+<section id="about" class="reveal py-5">
   <div class="container">
     <h2>About Me</h2>
     <div class="row align-items-center">
@@ -122,37 +110,34 @@
         <img src="Photo.jpg" alt="Biplab Dahal" class="img-fluid rounded-circle shadow" style="max-width: 220px;">
       </div>
       <div class="col-md-8">
-        <p class="fs-5">I am currently pursuing a Master's degree in Computer Science at the University of South Dakota. I gained over two years of professional experience at Cedar Gate Services, where I contributed to meaningful software projects.</p>
-        <p class="fs-5">I am passionate about building scalable software solutions and deepening my knowledge in Data Science and Artificial Intelligence.</p>
+        <p class="fs-5">I am currently pursuing a Master's in Computer Science at the University of South Dakota. With 2+ years at Cedar Gate Services, I worked on impactful software projects. My focus is on building scalable systems and advancing in AI and Data Science.</p>
         <p><strong>Interests:</strong> Software Engineering, AI, Web Development, Problem Solving</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Portfolio -->
-<section id="portfolio" class="bg-light-alt">
+<section id="portfolio" class="bg-light py-5 reveal">
   <div class="container">
     <h2>Portfolio / Projects</h2>
     <div class="row">
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm p-4 h-100">
           <h5 class="card-title fw-bold">Road Accident Severity Prediction</h5>
-          <p class="card-text">Built a neural network using backpropagation to predict accident severity based on road safety data. I contributed to front-end UI development and back-end learning implementation. The project supports data-informed road safety improvements.</p>
+          <p class="card-text">Built a neural network using backpropagation to predict accident severity based on road safety data. I contributed to front-end UI development and back-end learning implementation.</p>
         </div>
       </div>
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm p-4 h-100">
           <h5 class="card-title fw-bold">Agora - Recommendation System</h5>
-          <p class="card-text">Developed a collaborative filtering system like Netflix/Amazon to provide personalized recommendations based on user behavior. Helped users discover products or content aligned with their interests.</p>
+          <p class="card-text">Developed a collaborative filtering system to provide personalized recommendations. Helped users discover products or content aligned with their interests.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Blog -->
-<section id="blog">
+<section id="blog" class="py-5 reveal">
   <div class="container">
     <h2>Blog / Reflections</h2>
     <div class="row">
@@ -160,7 +145,7 @@
         <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-between bg-white">
           <div>
             <h5 class="fw-bold">Learning .NET and Beyond</h5>
-            <p>Developing real-world applications in .NET taught me robust coding practices and team collaboration skills in software engineering.</p>
+            <p>Developing real-world applications in .NET taught me robust coding practices and team collaboration skills.</p>
           </div>
           <a href="https://newsletter.techworld-with-milan.com/p/recommended-learning-resources-for" target="_blank" class="btn btn-primary mt-3">View Blog</a>
         </div>
@@ -169,7 +154,7 @@
         <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-between bg-white">
           <div>
             <h5 class="fw-bold">Exploring Machine Learning</h5>
-            <p>Gained deep insights into predictive modeling and data-driven decision making through hands-on machine learning projects.</p>
+            <p>Gained insights into predictive modeling and data-driven decision making through hands-on ML projects.</p>
           </div>
           <a href="https://www.coursera.org/articles/what-is-machine-learning" target="_blank" class="btn btn-primary mt-3">View Blog</a>
         </div>
@@ -178,8 +163,7 @@
   </div>
 </section>
 
-<!-- Resume -->
-<section id="resume" class="bg-light-alt">
+<section id="resume" class="bg-light py-5 reveal">
   <div class="container text-center">
     <h2>Resume / CV</h2>
     <p class="mb-4">Download my latest resume below:</p>
@@ -189,8 +173,7 @@
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact">
+<section id="contact" class="py-5 reveal">
   <div class="container">
     <h2>Contact Me</h2>
     <div class="row justify-content-center">
@@ -203,12 +186,24 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <p class="mb-0">Copyright © 2025 Biplab Dahal</p>
+  <p class="mb-0">&copy; 2025 Biplab Dahal</p>
 </footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Reveal animation on scroll
+  window.addEventListener("scroll", function() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const elementVisible = 100;
+      if (elementTop < windowHeight - elementVisible) {
+        el.classList.add("active");
+      }
+    });
+  });
+</script>
 </body>
 </html>
