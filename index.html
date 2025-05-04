@@ -18,22 +18,35 @@
     body {
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
+      background-color: #f8f9fa;
     }
     .navbar {
       background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     }
     .hero {
-      background: linear-gradient(to right, #0062E6, #33AEFF);
+      background: linear-gradient(to right, #00c6ff, #0072ff);
       color: white;
       padding: 120px 20px;
       text-align: center;
     }
     .hero h1 {
       font-weight: 800;
-      font-size: 3rem;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      font-size: 1.25rem;
     }
     section {
       padding: 80px 0;
+    }
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #0d6efd;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     }
     footer {
       background-color: #212529;
@@ -41,17 +54,33 @@
       padding: 30px 0;
       text-align: center;
     }
+    .card {
+      border: none;
+    }
     .card:hover {
       transform: scale(1.03);
       transition: 0.4s;
       box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
     }
     .btn-primary {
-      background: #0062E6;
+      background: #0072ff;
       border: none;
     }
     .btn-primary:hover {
-      background: #004ba0;
+      background: #0056c1;
+    }
+    .btn-success {
+      background: #28a745;
+      border: none;
+    }
+    .btn-success:hover {
+      background: #218838;
+    }
+    .bg-light-alt {
+      background: linear-gradient(135deg, #f0f4ff, #e2efff);
+    }
+    .shadow-text {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -60,7 +89,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#home">Biplab Dahal</a>
+    <a class="navbar-brand fw-bold fs-4" href="#home">Biplab Dahal</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,81 +108,78 @@
 <!-- Hero -->
 <section id="home" class="hero">
   <div class="container">
-    <h1>I am Biplab Dahal</h1>
+    <h1 class="mb-3">I am Biplab Dahal</h1>
     <p class="lead">Software Engineer | Data Enthusiast | Lifelong Learner</p>
   </div>
 </section>
 
-<!-- About Me -->
-<section id="about" class="container">
-  <div class="row align-items-center">
-    <div class="col-md-4 text-center mb-4">
-        <img src="Photo.jpg" alt="Biplab Dahal" class="img-fluid rounded-circle" style="max-width: 220px;">
-    </div>
-    <div class="col-md-8">
-      <h2>About Me</h2>
-      <p>I am currently pursuing a Master's degree in Computer Science at the University of South Dakota. I am grateful to have gained over two years of professional experience at Cedar Gate Services, where I had the opportunity to contribute to meaningful projects. I am passionate about building scalable software solutions and am continually striving to deepen my knowledge and expertise in the fields of Data Science and Artificial Intelligence.</p>
-      <p><strong>Interests:</strong> Software Engineering, AI, Web Development, Problem Solving</p>
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-4">
+        <img src="Photo.jpg" alt="Biplab Dahal" class="img-fluid rounded-circle shadow" style="max-width: 220px;">
+      </div>
+      <div class="col-md-8">
+        <p class="fs-5">I am currently pursuing a Master's degree in Computer Science at the University of South Dakota. I gained over two years of professional experience at Cedar Gate Services, where I contributed to meaningful software projects.</p>
+        <p class="fs-5">I am passionate about building scalable software solutions and deepening my knowledge in Data Science and Artificial Intelligence.</p>
+        <p><strong>Interests:</strong> Software Engineering, AI, Web Development, Problem Solving</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Portfolio -->
-<section id="portfolio" class="bg-light">
+<section id="portfolio" class="bg-light-alt">
   <div class="container">
-    <h2 class="text-center mb-5">Projects Summary</h2>
+    <h2>Portfolio / Projects</h2>
     <div class="row">
       <div class="col-md-6 mb-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">Road Accident Severity Prediction</h5>
-            <p class="card-text">In this project, I used backpropagation to train a neural network that predicts how severe an accident might be. The project also looks closely at road safety data to find important patterns and causes of accidents. This helps in reducing risks and gives useful information to policymakers for improving road safety. By combining prediction with detailed data analysis, the project supports better decisions to make roads safer.
-
-My main role was working on the front end to make the interface easy to use. On the back end, I focused on learning important concepts and applying them to build the needed features. Through this, I also gained a good understanding of machine learning.</p>
-          </div>
+        <div class="card shadow-sm p-4 h-100">
+          <h5 class="card-title fw-bold">Road Accident Severity Prediction</h5>
+          <p class="card-text">Built a neural network using backpropagation to predict accident severity based on road safety data. I contributed to front-end UI development and back-end learning implementation. The project supports data-informed road safety improvements.</p>
         </div>
       </div>
       <div class="col-md-6 mb-4">
-        <div class="card shadow">
-          <div class="card-body">
-            <h5 class="card-title">Agora - Recommendation System</h5>
-            <p class="card-text">Agora uses a Collaborative Filtering algorithm, similar to what Netflix and Amazon use, to give users personalized recommendations. It looks at what users search for and finds patterns in their preferences and behavior. For example, Netflix suggests movies and shows based on what you've watched, and Amazon recommends products based on your past purchases and browsing.
-
-This algorithm studies user activity and finds similarities between users or items to suggest things that match a person’s interests. As a result, the app helps users easily discover new content, products, or services that they’re likely to enjoy—just like how Netflix and Amazon do.</p>
-          </div>
+        <div class="card shadow-sm p-4 h-100">
+          <h5 class="card-title fw-bold">Agora - Recommendation System</h5>
+          <p class="card-text">Developed a collaborative filtering system like Netflix/Amazon to provide personalized recommendations based on user behavior. Helped users discover products or content aligned with their interests.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Blog (Modified) -->
-<section id="blog" class="container">
-  <h2 class="text-center mb-5">Blog / Reflections</h2>
-  <div class="row">
-    <div class="col-md-6 mb-4">
-      <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-between">
-        <div>
-          <h5>Learning .NET and Beyond</h5>
-          <p>Developing real-world applications in .NET taught me robust coding practices and team collaboration skills in software engineering.</p>
+<!-- Blog -->
+<section id="blog">
+  <div class="container">
+    <h2>Blog / Reflections</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-between bg-white">
+          <div>
+            <h5 class="fw-bold">Learning .NET and Beyond</h5>
+            <p>Developing real-world applications in .NET taught me robust coding practices and team collaboration skills in software engineering.</p>
+          </div>
+          <a href="https://newsletter.techworld-with-milan.com/p/recommended-learning-resources-for" target="_blank" class="btn btn-primary mt-3">View Blog</a>
         </div>
-        <a href="https://newsletter.techworld-with-milan.com/p/recommended-learning-resources-for" target="_blank" class="btn btn-primary mt-3">View Blog</a>
       </div>
-    </div>
-    <div class="col-md-6 mb-4">
-      <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-between">
-        <div>
-          <h5>Exploring Machine Learning</h5>
-          <p>Gained deep insights into predictive modeling and data-driven decision making through hands-on machine learning projects.</p>
+      <div class="col-md-6 mb-4">
+        <div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-between bg-white">
+          <div>
+            <h5 class="fw-bold">Exploring Machine Learning</h5>
+            <p>Gained deep insights into predictive modeling and data-driven decision making through hands-on machine learning projects.</p>
+          </div>
+          <a href="https://www.coursera.org/articles/what-is-machine-learning" target="_blank" class="btn btn-primary mt-3">View Blog</a>
         </div>
-        <a href="https://www.coursera.org/articles/what-is-machine-learning" target="_blank" class="btn btn-primary mt-3">View Blog</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Resume -->
-<section id="resume" class="bg-light">
+<section id="resume" class="bg-light-alt">
   <div class="container text-center">
     <h2>Resume / CV</h2>
     <p class="mb-4">Download my latest resume below:</p>
@@ -164,23 +190,25 @@ This algorithm studies user activity and finds similarities between users or ite
 </section>
 
 <!-- Contact -->
-<section id="contact" class="container">
-  <h2 class="text-center mb-5">Contact Me</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-6 text-center">
-      <p><i class="fas fa-envelope"></i> <a href="mailto:biplab.dahal@coyotes.usd.edu">biplab.dahal@coyotes.usd.edu</a></p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/biplab-dahal-683055207/" target="_blank">LinkedIn Profile</a></p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/biplab1541" target="_blank">GitHub Profile</a></p>
+<section id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <p><i class="fas fa-envelope"></i> <a href="mailto:biplab.dahal@coyotes.usd.edu">biplab.dahal@coyotes.usd.edu</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/biplab-dahal-683055207/" target="_blank">LinkedIn Profile</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/biplab1541" target="_blank">GitHub Profile</a></p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>Copyright © 2025 Biplab Dahal</p>
+  <p class="mb-0">Copyright © 2025 Biplab Dahal</p>
 </footer>
 
-<!-- Bootstrap Bundle JS -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
